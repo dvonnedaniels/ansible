@@ -1,0 +1,12 @@
+---
+
+  - name: Firewall Configurations
+    hosts: hopper
+    tasks:
+
+      - name: Enable Port 22/tcp
+        ansible.posix.firewalld:
+          zone: drop
+          port: 22/tcp
+          permanent: yes
+          state: enabled 
